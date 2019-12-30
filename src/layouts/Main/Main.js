@@ -1,23 +1,56 @@
-import React from "react";
+import React, {useState} from "react";
 import PropTypes from 'prop-types';
-import {makeStyles} from "@material-ui/styles";
+import clsx from 'clsx';
+import {makeStyles, useTheme} from "@material-ui/styles";
+import {useMediaQuery} from "@material-ui/core";
 
 
 const useStyles = makeStyles(theme => ({
   root: {
-    paddingTop: 56
+    paddingTop: 56,
+    height: '100%',
+    [theme.breakpoints.up('sm')]: {
+      paddingTop: 64
+    }
+  },
+  shiftContent: {
+    paddingLeft: 240
+  },
+  content: {
+    height: '100%'
   }
 }));
 
 const Main = props => {
-  const {children} = props;
+  const { children } = props;
 
   const classes = useStyles();
-  //const theme = useTheme();
+  const theme = useTheme();
+  console.log(theme);
+  const isDesktop = useMediaQuery(theme.breakpoints.up('lg'), {
+    defaultMatches: true
+  });
+
+  const [openSidebar, setOpenSidebar] = useState(false);
+
+  const handleSidebarOpen = () => {
+    setOpenSidebar(true);
+  };
+
+  const handleSidebarClose = () => {
+    setOpenSidebar(false);
+  };
+
 
   return (
-    <div>
-
+    <div
+      className={clsx({
+        [classes.root]: true,
+      })}
+    >
+      <main className={classes.content}>
+        {children}
+      </main>
     </div>
   );
 };
