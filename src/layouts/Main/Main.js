@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import {makeStyles, useTheme} from "@material-ui/styles";
 import {useMediaQuery} from "@material-ui/core";
+import {Sidebar, Topbar} from "./components";
 
 
 const useStyles = makeStyles(theme => ({
@@ -22,7 +23,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const Main = props => {
-  const { children } = props;
+  const {children} = props;
 
   const classes = useStyles();
   const theme = useTheme();
@@ -41,6 +42,7 @@ const Main = props => {
     setOpenSidebar(false);
   };
 
+  const shouldOpenSidebar = isDesktop ? true : openSidebar;
 
   return (
     <div
@@ -48,6 +50,11 @@ const Main = props => {
         [classes.root]: true,
       })}
     >
+      <Topbar onSidebarOpen={handleSidebarOpen}/>
+      <Sidebar
+        onClose={handleSidebarClose}
+        open={shouldOpenSidebar}
+        variant={isDesktop ? 'persistent' : 'temporary'}/>
       <main className={classes.content}>
         {children}
       </main>
