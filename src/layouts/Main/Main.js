@@ -27,7 +27,6 @@ const Main = props => {
 
   const classes = useStyles();
   const theme = useTheme();
-  console.log(theme);
   const isDesktop = useMediaQuery(theme.breakpoints.up('lg'), {
     defaultMatches: true
   });
@@ -48,6 +47,7 @@ const Main = props => {
     <div
       className={clsx({
         [classes.root]: true,
+        [classes.shiftContent]: isDesktop
       })}
     >
       <Topbar onSidebarOpen={handleSidebarOpen}/>
