@@ -56,6 +56,12 @@ export default {
     letterSpacing: '-0.05px',
     lineHeight: '21px'
   },
+  body1: {
+    color: palette.text.primary,
+    fontSize: '14px',
+    letterSpacing: '-0.05px',
+    lineHeight: '21px'
+  },
   body2: {
     color: palette.text.secondary,
     fontSize: '12px',
