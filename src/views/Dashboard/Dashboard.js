@@ -2,7 +2,7 @@ import React from "react";
 import {makeStyles} from "@material-ui/styles";
 import {Grid} from "@material-ui/core";
 
-import {Budget} from './components';
+import {Budget, TasksProgress, TotalProfit, TotalUsers} from './components';
 
 
 const useStyles = makeStyles(theme => ({
@@ -32,7 +32,7 @@ const Dashboard = () => {
           sm={6}
           xl={3}
           xs={12}>
-          Total Users
+          <TotalUsers/>
         </Grid>
         <Grid
           item
@@ -40,7 +40,15 @@ const Dashboard = () => {
           sm={6}
           xl={3}
           xs={12}>
-          Task Progress
+          <TasksProgress/>
+        </Grid>
+        <Grid
+          item
+          lg={3}
+          sm={6}
+          xl={3}
+          xs={12}>
+          <TotalProfit/>
         </Grid>
       </Grid>
     </div>
