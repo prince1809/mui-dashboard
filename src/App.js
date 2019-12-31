@@ -5,6 +5,8 @@ import ThemeProvider from "@material-ui/styles/ThemeProvider";
 import Routes from './Routes';
 import theme from './theme';
 
+import './assets/scss/index.scss';
+
 const browserHistory = createBrowserHistory();
 
 
