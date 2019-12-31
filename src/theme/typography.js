@@ -1,4 +1,4 @@
-import palette from "./palette";
+import palette from './palette';
 
 export default {
   h1: {
@@ -26,7 +26,7 @@ export default {
     color: palette.text.primary,
     fontWeight: 500,
     fontSize: '20px',
-    letterSpacing: '0.06px',
+    letterSpacing: '-0.06px',
     lineHeight: '24px'
   },
   h5: {
@@ -34,7 +34,7 @@ export default {
     fontWeight: 500,
     fontSize: '16px',
     letterSpacing: '-0.05px',
-    lineHeight: '20px',
+    lineHeight: '20px'
   },
   h6: {
     color: palette.text.primary,
@@ -69,7 +69,7 @@ export default {
     lineHeight: '18px'
   },
   button: {
-    color: palette.text.secondary,
+    color: palette.text.primary,
     fontSize: '14px'
   },
   caption: {
@@ -86,4 +86,4 @@ export default {
     lineHeight: '13px',
     textTransform: 'uppercase'
   }
-}
+};
